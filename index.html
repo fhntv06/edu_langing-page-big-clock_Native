@@ -1,52 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-	<title>Clock</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="shortcut icon" href="https://static-eu.insales.ru/files/1/7042/6060930/original/dostavka.png" type="image/x-icon">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мировое время и погода</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="https://static-eu.insales.ru/files/1/7042/6060930/original/dostavka.png" type="image/x-icon">
 </head>
 <body>
-	<div class="container">
-		<div class="clock">
-			<div class="into-circle">
-				<ul class="time">
-					<li class="time1">1</li>
-					<li class="time2">2</li>
-					<li class="time3">3</li>
-					<li class="time4">4</li>
-					<li class="time5">5</li>
-					<li class="time6">6</li>
-					<li class="time7">7</li>
-					<li class="time8">8</li>
-					<li class="time9">9</li>
-					<li class="time10">10</li>
-					<li class="time11">11</li>
-					<li class="time12">12</li>
-					<div class="cube">
-						<div class="center-circle-down">
-							<div class="arrow-m">
-								<img class="arrow-m-img" src="arrow-m.png">
-							</div>
-							<div class="arrow-h">
-								<img class="arrow-h-img" src="arrow-h.png">
-							</div>
-							<div class="arrow-s">
-								<img class="arrow-s-img" src="arrow-s.png">
-							</div>
-						</div>
-						<div class="center-circle-up">
-							<button class="btn">Показать время</button>
-						</div>
-					</div>
-				</ul>
-			</div>
-		</div>
-		<h1 class="your-time">Ваше время!</h1>
-	</div>
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-	<script type="text/javascript" src="script.js"></script>
+<div class="container">
+    <header class="header">
+        <h1>Мировое время и погода</h1>
+        <p>Следите за временем и температурой в разных городах мира</p>
+    </header>
+
+    <main class="main-content">
+        <div class="main-clock-section">
+            <div class="local-time-section">
+                <div class="analog-clock">
+                    <div class="clock-face">
+                        <div class="number number-1">1</div>
+                        <div class="number number-2">2</div>
+                        <div class="number number-3">3</div>
+                        <div class="number number-4">4</div>
+                        <div class="number number-5">5</div>
+                        <div class="number number-6">6</div>
+                        <div class="number number-7">7</div>
+                        <div class="number number-8">8</div>
+                        <div class="number number-9">9</div>
+                        <div class="number number-10">10</div>
+                        <div class="number number-11">11</div>
+                        <div class="number number-12">12</div>
+
+                        <div class="hand hour-hand"></div>
+                        <div class="hand minute-hand"></div>
+                        <div class="hand second-hand"></div>
+                        <div class="center-circle"></div>
+                    </div>
+                </div>
+
+                <div class="digital-clock">
+                    <div class="time-display">
+                        <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+                    </div>
+                    <div class="date-display" id="date"></div>
+                    <div class="location">Ваше местное время</div>
+                </div>
+                <div class="controls">
+                    <button id="theme-toggle" class="theme-btn">🌙 Сменить тему</button>
+                    <button id="format-toggle" class="format-btn">24ч Формат</button>
+                </div>
+            </div>
+
+            <div class="world-time-section">
+                <div class="world-time-header">
+                    <h2 id="section-title">Время в городах мира</h2>
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="time">
+                            <span class="tab-icon">🕒</span>
+                            Время
+                        </button>
+                        <button class="tab-btn" data-tab="temperature">
+                            <span class="tab-icon">🌡️</span>
+                            Температура
+                        </button>
+                    </div>
+                </div>
+
+                <div class="cities-container" id="cities-container">
+                    <!-- Карточки будут создаваться динамически через JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 Мировое время и погода. Все права защищены.</p>
+    </footer>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
-
